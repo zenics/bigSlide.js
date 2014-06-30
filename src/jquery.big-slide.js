@@ -60,6 +60,14 @@
       menuLink.removeClass(settings.activeBtn);
     };
 
+
+ $(document).on('click.bigSlide', function(e) {
+     if (!$(e.target).parents().andSelf().is(menuLink)) {
+       menu.close();
+     }
+    });
+
+
     menuLink.on('click.bigSlide', function(e) {
       e.preventDefault();
       if (menu._state === 'closed') {
